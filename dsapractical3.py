@@ -21,7 +21,7 @@ arr=[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 print("original array:", arr)
 bubble_sort(arr)
 print("bubble sort:", arr)
-"""
+
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
@@ -55,3 +55,17 @@ arr=[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 print("original array:", arr)
 merge_sort(arr)
 print("merge sort:", arr)
+"""
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr) // 2]
+        left = [x for x in arr if x < pivot]
+        middle = [x for x in arr if x == pivot]
+        right = [x for x in arr if x > pivot]
+        return quick_sort(left) + middle + quick_sort(right)
+arr=[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+print("original array:", arr)
+sorted_arr = quick_sort(arr)
+print("quick sort:", sorted_arr)
